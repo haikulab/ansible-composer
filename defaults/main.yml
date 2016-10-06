@@ -1,0 +1,14 @@
+---
+
+# Where do you want to install composer
+install_to_path: /usr/local/bin
+
+# Where to download composer from
+composer_download_url: https://getcomposer.org/composer.phar
+
+# What do you want to call composer.phar
+## Some people like composer.phar some like just composer
+composer_binary_name: composer
+
+# Enable daily cronjob to update composer
+auto_update: yes

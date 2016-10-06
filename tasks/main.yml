@@ -1,0 +1,18 @@
+---
+
+- name: Download Composer Binary
+  get_url: |
+    url="{{ composer_download_url }}"
+    dest="{{ install_to_path }}/{{ composer_binary_name }}"
+    mode=0755
+
+- name: Enable crontab to auto update composer
+  when: auto_update == true
+  template: >
+    src=crontab_composer-update.j2
+    dest=/etc/cron.daily/composer-update
+    owner=root
+    group=root
+    mode=0755
+
+#- debug: msg="{{ auto_update }}"
